@@ -1,0 +1,11 @@
+version: '3'
+services:
+  ping:
+    build:
+      context: ./ping
+    depends_on:
+      - pong
+
+  pong:
+    build:
+      context: ./pong

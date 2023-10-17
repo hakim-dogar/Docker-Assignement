@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx:
+    image: "nginx:latest"
+    ports:
+      - "80:80"
+    volumes:
+      - "./static:/usr/share/nginx/html"
+      - "./nginx-logs:/var/log/nginx"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+        tag: nginx
